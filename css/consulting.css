@@ -1,0 +1,170 @@
+/* Consulting page specific styles */
+.consulting-intro {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 1rem;
+    scrollbar-width: thin;
+}
+
+.services-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.services-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.services-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.service-card {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    background-color: #000;
+    color: #fff;
+    padding: 1.5rem;
+}
+
+.service-content {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.service-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.service-content p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.service-features {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-features li {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-features li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+.consulting-cta {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.consulting-cta h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.consulting-cta p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.btn-contact {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.consulting-illustration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/historical-figure.svg');
+    background-size: contain;
+    background-position: center right;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+/* Active navigation link */
+.nav-links a.active {
+    color: #000;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .service-card {
+        flex-direction: column;
+    }
+    
+    .service-icon {
+        min-width: 100%;
+        padding: 1rem;
+    }
+    
+    .services-container {
+        max-height: none;
+        overflow-y: visible;
+    }
+} 
