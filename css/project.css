@@ -14,23 +14,23 @@
 }
 
 .filter-btn {
-    background: none;
-    border: none;
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    color: #666;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 2px;
     cursor: pointer;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
-    border-radius: 2rem;
 }
 
 .filter-btn:hover {
-    color: #000;
+    background: #f5f5f5;
 }
 
 .filter-btn.active {
-    background-color: #000;
+    background: #000;
     color: #fff;
+    border-color: #000;
 }
 
 .projects-container {
@@ -140,22 +140,8 @@
 }
 
 .project-description {
+    color: #666;
     font-size: 0.9rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-.project-illustration {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('../images/project-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.7;
 }
 
 /* Active navigation link */
@@ -168,6 +154,5 @@
 @media (max-width: 768px) {
     .projects-container {
         max-height: none;
-        overflow-y: visible;
     }
 } 

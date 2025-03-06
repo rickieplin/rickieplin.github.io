@@ -1,49 +1,33 @@
-# Image Replacement Guide
+# 图片替换指南
 
-This directory contains placeholder files for the images used in the website. Please replace these files with your own images to personalize your website.
+本目录包含网站使用的图片占位文件。请用您自己的图片替换这些文件，以个性化您的网站。
 
-## Required Images
+## 必需图片
 
-1. **profile-image.jpg** - Main image for the home page
-   - Recommended size: 1200x1600px or similar aspect ratio
-   - This image will be displayed on the right side of the home page
+1. **profile-image.jpg** - 所有页面的主要图片
+   - 推荐尺寸：1200x1600像素或类似比例
+   - 此图片将显示在所有页面的右侧25%区域
 
-2. **about-image.jpg** - Background image for the About page
-   - Recommended size: 1200x1600px or similar aspect ratio
-   - This image will be displayed on the right side of the About page
+## 项目图片
 
-3. **project-image.jpg** - Background image for the Project page
-   - Recommended size: 1200x1600px or similar aspect ratio
-   - This image will be displayed on the right side of the Project page
-
-4. **consulting-image.jpg** - Background image for the Consulting page
-   - Recommended size: 1200x1600px or similar aspect ratio
-   - This image will be displayed on the right side of the Consulting page
-
-5. **contact-image.jpg** - Background image for the Contact page
-   - Recommended size: 1200x1600px or similar aspect ratio
-   - This image will be displayed on the right side of the Contact page
-
-## Project Images
-
-The following SVG files are used as placeholders for project thumbnails. You can replace these with your own images:
+以下SVG文件用作项目缩略图的占位符。您可以用自己的图片替换这些文件：
 
 - placeholder-project1.svg
 - placeholder-project2.svg
 - placeholder-project3.svg
 - placeholder-project4.svg
 
-For project thumbnails, use images with a 4:3 aspect ratio (e.g., 400x300px) for best results.
+对于项目缩略图，使用4:3的宽高比（例如，400x300像素）可获得最佳效果。
 
-## Image Optimization
+## 图片优化
 
-For better website performance, consider optimizing your images before uploading:
-- Compress JPG and PNG files to reduce file size
-- Use appropriate dimensions (don't use 4000px wide images if they'll only be displayed at 1200px)
-- Consider using modern formats like WebP for better compression
+为了提高网站性能，请考虑在上传前优化您的图片：
+- 压缩JPG和PNG文件以减小文件大小
+- 使用适当的尺寸（如果图片只会以1200像素宽度显示，就不要使用4000像素宽的图片）
+- 考虑使用WebP等现代格式以获得更好的压缩效果
 
-## File Formats
+## 文件格式
 
-- Use JPG for photographs
-- Use PNG for images that require transparency
-- Use SVG for icons and simple graphics 
+- 对于照片使用JPG格式
+- 对于需要透明度的图片使用PNG格式
+- 对于图标和简单图形使用SVG格式 

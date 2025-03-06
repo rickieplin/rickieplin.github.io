@@ -126,19 +126,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.about-illustration {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('../images/about-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.9;
-}
-
 /* Active navigation link */
 .nav-links a.active {
     color: #000;
@@ -157,6 +144,5 @@
     
     .resume-container {
         max-height: none;
-        overflow-y: visible;
     }
 } 

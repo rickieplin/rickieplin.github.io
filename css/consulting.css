@@ -7,10 +7,11 @@
 }
 
 .services-container {
-    display: flex;
-    flex-direction: column;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
-    max-height: 60vh;
+    max-height: 70vh;
     overflow-y: auto;
     padding-right: 1rem;
     scrollbar-width: thin;
@@ -132,19 +133,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.consulting-illustration {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('../images/consulting-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.7;
-}
-
 /* Active navigation link */
 .nav-links a.active {
     color: #000;
@@ -154,16 +142,14 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .service-card {
-        flex-direction: column;
+        padding: 1.5rem;
     }
     
     .service-icon {
-        min-width: 100%;
-        padding: 1rem;
+        margin-bottom: 1rem;
     }
     
     .services-container {
         max-height: none;
-        overflow-y: visible;
     }
 } 

@@ -10,6 +10,8 @@ body {
     color: #000;
     background-color: #fff;
     line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* Layout - Two-column asymmetrical structure */
@@ -19,15 +21,18 @@ body {
 }
 
 .left-column {
-    width: 35%;
+    width: 60%;
     padding: 3rem;
     display: flex;
     flex-direction: column;
 }
 
 .right-column {
-    width: 65%;
+    width: 40%;
     position: relative;
+    overflow: hidden; /* Prevent any content from overflowing */
+    height: 100vh; /* Fixed height */
+    min-height: 100%; /* Ensure minimum height */
 }
 
 /* Navigation */
@@ -120,17 +125,24 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Illustration */
-.illustration {
+/* Illustration - Common styles for all pages */
+.illustration,
+.about-illustration,
+.project-illustration,
+.consulting-illustration,
+.contact-illustration {
     position: absolute;
     top: 0;
     right: 0;
     height: 100%;
     width: 100%;
-    background-image: url('../images/profile-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('../images/profile-image.jpg') !important; /* Force using the same image */
+    background-size: cover !important; /* Force the same size behavior */
+    background-position: center !important; /* Force the same position */
+    background-repeat: no-repeat !important;
+    opacity: 0.8 !important; /* Standardized opacity */
+    transition: opacity 0.3s ease; /* Smooth transition between pages */
+    object-fit: cover !important; /* Ensure the image fills the space correctly */
 }
 
 /* Responsive adjustments */
@@ -139,12 +151,14 @@ nav {
         flex-direction: column;
     }
     
-    .left-column, .right-column {
+    .left-column {
         width: 100%;
+        padding: 2rem;
     }
     
     .right-column {
-        min-height: 50vh;
+        width: 100%;
+        height: 50vh;
     }
     
     .nav-links {
