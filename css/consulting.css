@@ -138,12 +138,11 @@
     right: 0;
     height: 100%;
     width: 100%;
-    background-image: url('../images/historical-figure.svg');
-    background-size: contain;
-    background-position: center right;
+    background-image: url('../images/consulting-image.jpg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    filter: grayscale(100%);
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 /* Active navigation link */

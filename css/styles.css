@@ -127,11 +127,10 @@ nav {
     right: 0;
     height: 100%;
     width: 100%;
-    background-image: url('../images/historical-figure.svg');
-    background-size: contain;
-    background-position: center right;
+    background-image: url('../images/profile-image.jpg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    filter: grayscale(100%);
 }
 
 /* Responsive adjustments */
