@@ -1,17 +1,29 @@
-/* Preloader Styles */
+/* Minecraft-Inspired Preloader Styles */
+@font-face {
+    font-family: "Minecraft";
+    src: url("https://db.onlinewebfonts.com/t/b13d8be73b27c223a22099ffe6d46c5a.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #3D3D3D;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+    background-size: 16px 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    transition: opacity 0.5s steps(5), visibility 0.5s steps(5);
+    image-rendering: pixelated;
 }
 
 .preloader.hidden {
@@ -20,51 +32,77 @@
 }
 
 .loader-container {
-    width: 200px;
+    width: 300px;
     position: relative;
     margin-bottom: 30px;
+    border: 4px solid #000;
+    padding: 10px;
+    background-color: #8B8B8B;
+    box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.3), 
+                inset -2px -2px 0px rgba(0, 0, 0, 0.3);
 }
 
 .loader-text {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 1.2rem;
+    font-family: "Minecraft", "Courier New", monospace;
+    font-size: 1.5rem;
     margin-bottom: 20px;
     letter-spacing: 1px;
-    color: #000;
+    color: #FFFF55;
     text-align: center;
+    text-shadow: 2px 2px 0px #3F3F00;
 }
 
 .progress-bar {
     width: 100%;
-    height: 4px;
-    background-color: #f0f0f0;
-    border-radius: 2px;
+    height: 30px;
+    background-color: #555555;
+    border: 2px solid #000000;
+    position: relative;
     overflow: hidden;
 }
 
-.progress {
-    width: 0%;
+.progress-blocks-container {
+    display: flex;
     height: 100%;
-    background-color: #000;
-    transition: width 0.3s ease-in-out;
+    width: 100%;
+}
+
+.progress-block {
+    height: 100%;
+    width: 10px;
+    background-color: #5BDB5B;
+    border-right: 2px solid #2C9E2C;
+    box-sizing: border-box;
+    transform: scale(0);
+    transition: transform 0.1s steps(2);
+}
+
+.progress-block.active {
+    transform: scale(1);
 }
 
 .loader-percentage {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 0.9rem;
-    color: #666;
+    font-family: "Minecraft", "Courier New", monospace;
+    font-size: 1rem;
+    color: #FFFFFF;
     margin-top: 10px;
     text-align: right;
+    text-shadow: 1px 1px 0px #000000;
 }
 
 .welcome-message {
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Minecraft", "Courier New", monospace;
     font-size: 2rem;
     font-weight: 700;
     margin-top: 20px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s steps(5), transform 0.5s steps(5);
+    color: #FFFFFF;
+    text-shadow: 2px 2px 0px #000000;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px solid #555555;
 }
 
 .welcome-message.visible {
@@ -93,39 +131,34 @@
     }
 }
 
-/* Logo animation */
+/* Minecraft Logo */
 .logo-container {
     margin-bottom: 30px;
 }
 
-.logo {
+.minecraft-logo {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    background-color: #000;
+    background-color: #5B7C3C; /* Minecraft grass block green */
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Minecraft", "Courier New", monospace;
     font-size: 2rem;
     font-weight: bold;
-    animation: pulse 2s infinite;
+    text-shadow: 2px 2px 0px #000000;
+    border: 4px solid #000000;
+    box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.3), 
+                inset -2px -2px 0px rgba(0, 0, 0, 0.3);
+    animation: blockHover 2s infinite alternate;
 }
 
-@keyframes pulse {
+@keyframes blockHover {
     0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        transform: translateY(0px);
     }
-    
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-    }
-    
     100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        transform: translateY(-10px);
     }
 } 

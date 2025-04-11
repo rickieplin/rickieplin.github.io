@@ -1,0 +1,196 @@
+/* Hero illustration & animation styles */
+.illustration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: linear-gradient(135deg, #536976, #292E49);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .illustration::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.2));
+    z-index: 0;
+  }
+  
+  .hero-graphic {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards, pulseSize 10s infinite ease-in-out;
+    animation-delay: 0.8s, 1s;
+  }
+  
+  @keyframes pulseSize {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+  }
+  
+  .floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .float-element {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(245, 245, 245, 0.25), rgba(235, 235, 235, 0.15));
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards, float 3s infinite ease-in-out;
+    padding: 15px;
+  }
+  
+  .float-element svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  
+  .float-element:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 1s, 1.2s;
+    background: linear-gradient(135deg, rgba(200, 214, 229, 0.3), rgba(190, 200, 210, 0.2));
+  }
+  
+  .float-element:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    top: 60%;
+    left: 15%;
+    animation-delay: 1.3s, 1.5s;
+    background: linear-gradient(135deg, rgba(220, 227, 232, 0.3), rgba(200, 210, 220, 0.2));
+  }
+  
+  .float-element:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    right: 15%;
+    animation-delay: 1.6s, 1.8s;
+    background: linear-gradient(135deg, rgba(210, 220, 230, 0.3), rgba(190, 200, 215, 0.2));
+  }
+  
+  .float-element:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    bottom: 25%;
+    right: 10%;
+    animation-delay: 1.9s, 2.1s;
+    background: linear-gradient(135deg, rgba(225, 232, 238, 0.3), rgba(210, 220, 225, 0.2));
+  }
+  
+  .float-element:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    bottom: 15%;
+    left: 40%;
+    animation-delay: 2.2s, 2.4s;
+    background: linear-gradient(135deg, rgba(215, 225, 235, 0.3), rgba(195, 205, 215, 0.2));
+  }
+  
+  .float-element:nth-child(6) {
+    width: 70px;
+    height: 70px;
+    top: 15%;
+    left: 40%;
+    animation-delay: 2.4s, 2.6s;
+    background: linear-gradient(135deg, rgba(205, 215, 225, 0.3), rgba(185, 195, 205, 0.2));
+  }
+  
+  .float-element:nth-child(7) {
+    width: 90px;
+    height: 90px;
+    bottom: 40%;
+    right: 25%;
+    animation-delay: 2.6s, 2.8s;
+    background: linear-gradient(135deg, rgba(195, 205, 215, 0.3), rgba(175, 185, 195, 0.2));
+  }
+  
+  /* Particle effects */
+  .particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFade 5s infinite linear;
+  }
+  
+  @keyframes particleFade {
+    0% { 
+      opacity: 0;
+      transform: translateY(0) scale(0);
+    }
+    20% { opacity: 0.8; }
+    100% { 
+      opacity: 0;
+      transform: translateY(-100px) scale(1);
+    }
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .hero-graphic {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .float-element {
+      display: none;
+    }
+    
+    .float-element:nth-child(1),
+    .float-element:nth-child(3) {
+      display: flex;
+    }
+  }

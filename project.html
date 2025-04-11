@@ -5,18 +5,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Projects | Pei (Rickie) Lin</title>
 		<link rel="stylesheet" href="css/styles.css" />
-		<link rel="stylesheet" href="css/project.css" />
 		<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<script src="js/access-control.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			<div class="left-column">
 				<!-- Navigation -->
 				<nav>
+					<div class="logo-mark">RL</div>
 					<ul class="nav-links">
 						<li><a href="index.html">Home</a></li>
 						<li><a href="about.html">About</a></li>
-						<li><a href="project.html" class="active">Project</a></li>
 						<li><a href="consulting.html">Consulting</a></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
@@ -24,8 +25,10 @@
 
 				<!-- Main Content -->
 				<div class="content">
-					<h2 class="subtitle">MY WORK</h2>
-					<h1 class="title">Projects</h1>
+					<div class="page-header">
+						<h2 class="subtitle">MY WORK</h2>
+						<h1 class="title">Featured Projects</h1>
+					</div>
 
 					<div class="project-intro">
 						<p>
@@ -36,12 +39,16 @@
 					</div>
 
 					<div class="project-filter">
-						<button class="filter-btn active" data-filter="all">All</button>
-						<button class="filter-btn" data-filter="ml-ai">ML/AI</button>
-						<button class="filter-btn" data-filter="fullstack">
-							Full-Stack
+						<button class="filter-btn active" data-filter="all">All Projects</button>
+						<button class="filter-btn" data-filter="ml-ai">
+							<i class="fas fa-brain"></i> ML/AI
 						</button>
-						<button class="filter-btn" data-filter="research">Research</button>
+						<button class="filter-btn" data-filter="fullstack">
+							<i class="fas fa-code"></i> Full-Stack
+						</button>
+						<button class="filter-btn" data-filter="research">
+							<i class="fas fa-flask"></i> Research
+						</button>
 					</div>
 
 					<div class="projects-container">
@@ -49,15 +56,21 @@
 						<div class="project-card" data-category="ml-ai research">
 							<div class="project-image">
 								<img
-									src="images/placeholder-project1.svg"
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3ETransformer Model%3C/text%3E%3C/svg%3E"
 									alt="Transformer Model Project"
 								/>
 								<div class="project-overlay">
-									<a href="#" class="view-project">View Project</a>
+									<a href="#" class="view-project">
+										<span>View Project</span>
+										<i class="fas fa-arrow-right"></i>
+									</a>
 								</div>
 							</div>
 							<div class="project-info">
-								<span class="project-category">ML/AI, Research</span>
+								<div class="project-tags">
+									<span class="project-tag">ML/AI</span>
+									<span class="project-tag">Research</span>
+								</div>
 								<h3 class="project-title">
 									Transformer Models for Stock Market Trends
 								</h3>
@@ -66,6 +79,11 @@
 									sentiment analysis, predicting stock trends with 55.98%
 									accuracy (F1: 70.92%), outperforming LSTM baselines.
 								</p>
+								<div class="project-tech">
+									<span class="tech-tag">PyTorch</span>
+									<span class="tech-tag">NLP</span>
+									<span class="tech-tag">FinBERT</span>
+								</div>
 							</div>
 						</div>
 
@@ -73,23 +91,32 @@
 						<div class="project-card" data-category="ml-ai fullstack">
 							<div class="project-image">
 								<img
-									src="images/placeholder-project2.svg"
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EStudy GPT%3C/text%3E%3C/svg%3E"
 									alt="Study GPT Platform"
 								/>
 								<div class="project-overlay">
-									<a href="https://myliuxuegpt.com" class="view-project"
-										>View Project</a
-									>
+									<a href="https://myliuxuegpt.com" class="view-project">
+										<span>View Project</span>
+										<i class="fas fa-arrow-right"></i>
+									</a>
 								</div>
 							</div>
 							<div class="project-info">
-								<span class="project-category">ML/AI, Full-Stack</span>
+								<div class="project-tags">
+									<span class="project-tag">ML/AI</span>
+									<span class="project-tag">Full-Stack</span>
+								</div>
 								<h3 class="project-title">Study GPT</h3>
 								<p class="project-description">
 									Engineered an AI-driven platform with Vue.js and Spring Boot,
 									training ML models on PyTorch with scraped web data, achieving
 									a 10% accuracy boost for resume and academic tools.
 								</p>
+								<div class="project-tech">
+									<span class="tech-tag">Vue.js</span>
+									<span class="tech-tag">Spring Boot</span>
+									<span class="tech-tag">PyTorch</span>
+								</div>
 							</div>
 						</div>
 
@@ -97,21 +124,31 @@
 						<div class="project-card" data-category="fullstack">
 							<div class="project-image">
 								<img
-									src="images/placeholder-project3.svg"
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EHealthcare System%3C/text%3E%3C/svg%3E"
 									alt="Healthcare Platform"
 								/>
 								<div class="project-overlay">
-									<a href="#" class="view-project">View Project</a>
+									<a href="#" class="view-project">
+										<span>View Project</span>
+										<i class="fas fa-arrow-right"></i>
+									</a>
 								</div>
 							</div>
 							<div class="project-info">
-								<span class="project-category">Full-Stack</span>
+								<div class="project-tags">
+									<span class="project-tag">Full-Stack</span>
+								</div>
 								<h3 class="project-title">Healthcare Management System</h3>
 								<p class="project-description">
 									Developed a comprehensive healthcare management system using
 									React, Node.js, and SQL Server, streamlining patient data
 									management and improving operational efficiency.
 								</p>
+								<div class="project-tech">
+									<span class="tech-tag">React</span>
+									<span class="tech-tag">Node.js</span>
+									<span class="tech-tag">SQL</span>
+								</div>
 							</div>
 						</div>
 
@@ -119,15 +156,20 @@
 						<div class="project-card" data-category="ml-ai">
 							<div class="project-image">
 								<img
-									src="images/placeholder-project4.svg"
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EMedical AGI%3C/text%3E%3C/svg%3E"
 									alt="AGI Customization"
 								/>
 								<div class="project-overlay">
-									<a href="#" class="view-project">View Project</a>
+									<a href="#" class="view-project">
+										<span>View Project</span>
+										<i class="fas fa-arrow-right"></i>
+									</a>
 								</div>
 							</div>
 							<div class="project-info">
-								<span class="project-category">ML/AI</span>
+								<div class="project-tags">
+									<span class="project-tag">ML/AI</span>
+								</div>
 								<h3 class="project-title">Medical Report Analysis AGI</h3>
 								<p class="project-description">
 									Customized an AGI model with extensive patient data from
@@ -135,6 +177,11 @@
 									analysis and enable patient queries, improving diagnostics and
 									engagement.
 								</p>
+								<div class="project-tech">
+									<span class="tech-tag">AGI</span>
+									<span class="tech-tag">Medical AI</span>
+									<span class="tech-tag">NLP</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -143,9 +190,13 @@
 
 			<div class="right-column">
 				<div class="project-illustration"></div>
+				<div class="shape-decoration shape-1"></div>
+				<div class="shape-decoration shape-2"></div>
+				<div class="shape-decoration shape-3"></div>
 			</div>
 		</div>
 
+		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 		<script src="js/project.js"></script>
 	</body>
 </html>
