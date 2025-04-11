@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Consulting | Pei (Rickie) Lin</title>
 		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/news-feed.css" />
 		<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 		<script src="js/access-control.js"></script>
@@ -18,7 +19,7 @@
 					<ul class="nav-links">
 						<li><a href="index.html">Home</a></li>
 						<li><a href="about.html">About</a></li>
-						<li><a href="consulting.html" class="active">Consulting</a></li>
+						<li><a href="consulting.html" class="active">News&Interests</a></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</nav>
@@ -26,163 +27,42 @@
 				<!-- Main Content -->
 				<div class="content">
 					<div class="page-header">
-						<h2 class="subtitle">SERVICES</h2>
-						<h1 class="title">Consulting</h1>
+						<h2 class="subtitle">LATEST UPDATES</h2>
+						<h1 class="title">News & Interests</h1>
 					</div>
 
-					<div class="consulting-intro">
-						<p>
-							I offer specialized software engineering and AI development
-							services for businesses, startups, and organizations. My expertise
-							helps bring innovative technical solutions to your projects,
-							enhancing efficiency and driving growth.
-						</p>
+					<!-- News Section -->
+					<div class="news-section">
+						<div class="section-title">
+							<h2>Tech & Industry Updates</h2>
+							<p>
+								Stay informed with the latest developments in technology, AI, and software engineering from around the world.
+							</p>
+						</div>
+
+						<div class="news-container">
+							<!-- News posts will be populated by JavaScript -->
+						</div>
 					</div>
 
-					<div class="services-container">
-						<!-- Service 1 -->
-						<div class="service-card">
-							<div class="service-icon">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								>
-									<path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-									<path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-									<path d="M2 2l7.586 7.586"></path>
-									<circle cx="11" cy="11" r="2"></circle>
-								</svg>
-							</div>
-							<div class="service-content">
-								<h3>AI & Machine Learning Development</h3>
-								<p>
-									Custom AI and machine learning solutions tailored to your
-									business needs, from concept to deployment.
-								</p>
-								<ul class="service-features">
-									<li>Custom ML model development and training</li>
-									<li>Natural language processing solutions</li>
-									<li>Computer vision applications</li>
-									<li>AI integration with existing systems</li>
-								</ul>
-							</div>
+					<!-- Personal Interests Section -->
+					<div class="interests-section">
+						<div class="section-title">
+							<h2>My Personal Interests</h2>
+							<p>
+								When I'm not coding or working on tech projects, here are some of the activities I enjoy in my free time.
+							</p>
 						</div>
 
-						<!-- Service 2 -->
-						<div class="service-card">
-							<div class="service-icon">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								>
-									<polyline points="16 18 22 12 16 6"></polyline>
-									<polyline points="8 6 2 12 8 18"></polyline>
-								</svg>
-							</div>
-							<div class="service-content">
-								<h3>Full-Stack Development</h3>
-								<p>
-									End-to-end web and mobile application development with modern
-									technologies and best practices.
-								</p>
-								<ul class="service-features">
-									<li>Responsive web application development</li>
-									<li>RESTful API design and implementation</li>
-									<li>Database design and optimization</li>
-									<li>Frontend and backend integration</li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Service 3 -->
-						<div class="service-card">
-							<div class="service-icon">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								>
-									<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-									<line x1="8" y1="21" x2="16" y2="21"></line>
-									<line x1="12" y1="17" x2="12" y2="21"></line>
-								</svg>
-							</div>
-							<div class="service-content">
-								<h3>Cloud Architecture & DevOps</h3>
-								<p>
-									Cloud infrastructure design, implementation, and optimization
-									for scalable and reliable applications.
-								</p>
-								<ul class="service-features">
-									<li>Cloud migration and infrastructure setup</li>
-									<li>CI/CD pipeline implementation</li>
-									<li>Containerization with Docker and Kubernetes</li>
-									<li>Performance optimization and monitoring</li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Service 4 -->
-						<div class="service-card">
-							<div class="service-icon">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								>
-									<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-									<circle cx="9" cy="7" r="4"></circle>
-									<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-									<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-								</svg>
-							</div>
-							<div class="service-content">
-								<h3>Technical Consulting & Training</h3>
-								<p>
-									Expert guidance on technology strategy, architecture
-									decisions, and team training.
-								</p>
-								<ul class="service-features">
-									<li>Technology stack evaluation and selection</li>
-									<li>Code reviews and best practices implementation</li>
-									<li>Technical team mentoring and training</li>
-									<li>Legacy system modernization planning</li>
-								</ul>
-							</div>
+						<div class="interests-container">
+							<!-- Interest items will be populated by JavaScript -->
 						</div>
 					</div>
 
 					<div class="consulting-cta">
-						<h3>Interested in working together?</h3>
+						<h3>Want to discuss tech trends or share similar interests?</h3>
 						<p>
-							Contact me to discuss your project needs and how my software
-							engineering and AI expertise can benefit your business.
+							Feel free to reach out! I'm always open to connecting with like-minded individuals and discussing the latest in technology and beyond.
 						</p>
 						<a href="contact.html" class="btn-contact">Get in Touch</a>
 					</div>
@@ -196,5 +76,8 @@
 				<div class="shape-decoration shape-3"></div>
 			</div>
 		</div>
+
+		<!-- Scripts -->
+		<script src="js/news-feed.js"></script>
 	</body>
 </html>
