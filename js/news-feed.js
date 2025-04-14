@@ -43,19 +43,19 @@ document.addEventListener("DOMContentLoaded", function() {
             description: "Capturing urban landscapes and street photography in my spare time."
         },
         {
-            name: "Chess",
-            icon: "fa-chess",
-            description: "Strategic thinking and problem-solving through competitive chess games."
+            name: "Workout",
+            icon: "fa-dumbbell",
+            description: "Maintaining physical fitness through regular strength training and cardio exercises."
         },
         {
-            name: "Hiking",
-            icon: "fa-mountain",
-            description: "Exploring nature trails and mountains to disconnect and recharge."
+            name: "Coding",
+            icon: "fa-code",
+            description: "Building personal projects and exploring new programming languages and frameworks."
         },
         {
-            name: "Cooking",
-            icon: "fa-utensils",
-            description: "Experimenting with fusion cuisine and perfecting traditional recipes."
+            name: "FPS Games",
+            icon: "fa-gamepad",
+            description: "Enjoying competitive first-person shooter games to unwind and sharpen reflexes."
         }
     ];
 
