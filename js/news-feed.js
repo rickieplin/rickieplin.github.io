@@ -10,28 +10,28 @@ document.addEventListener("DOMContentLoaded", function() {
     // In a real implementation, this would be fetched from an API or CMS
     const newsPosts = [
         {
-            title: "The Rise of AI in Healthcare",
+            title: "Google Unveils A2A Protocol for AI Agent Collaboration",
             category: "Technology",
-            date: "June 15, 2024",
-            summary: "Artificial intelligence is revolutionizing patient care and medical diagnostics, with new breakthroughs happening every month.",
-            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EAI in Healthcare%3C/text%3E%3C/svg%3E",
-            link: "#"
+            date: "April 9, 2025",
+            summary: "Google introduced Agent2Agent (A2A), a new open protocol designed to enable seamless communication between AI agents across platforms. Supported by over 50 tech partners, A2A aims to standardize agent interactions.",
+            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EAI Collaboration%3C/text%3E%3C/svg%3E",
+            link: "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
         },
         {
-            title: "Machine Learning Models Predict Stock Market Trends",
-            category: "Finance",
-            date: "May 28, 2024",
-            summary: "New research shows how advanced ML algorithms can accurately predict market movements with greater precision than traditional methods.",
-            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EStock Market ML%3C/text%3E%3C/svg%3E",
-            link: "#"
+            title: "OpenAI's GPT-4o Enhances Image Creation for All Users",
+            category: "AI",
+            date: "March 25, 2025",
+            summary: "OpenAI's GPT-4o now powers native image generation in ChatGPT, offering context-aware visuals and conversational editing. Available to all users, it's popular for creating Studio Ghibli-style art.",
+            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EGPT-4o%3C/text%3E%3C/svg%3E",
+            link: "https://openai.com/index/introducing-4o-image-generation/"
         },
         {
-            title: "Web Development Trends to Watch in 2024",
-            category: "Development",
-            date: "April 12, 2024",
-            summary: "From WebAssembly to serverless architectures, these are the technologies shaping the future of web development.",
-            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EWeb Development%3C/text%3E%3C/svg%3E",
-            link: "#"
+            title: "Introducing the Model Context Protocol",
+            category: "Technology",
+            date: "November 245, 2024",
+            summary: "Anthropic introduces the Model Context Protocol, a new open standard for AI model interoperability, enabling developers to build more flexible and powerful applications.",
+            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EModel Context Protocol%3C/text%3E%3C/svg%3E",
+            link: "https://www.anthropic.com/news/model-context-protocol"
         }
     ];
 
