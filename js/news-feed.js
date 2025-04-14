@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             title: "Introducing the Model Context Protocol",
             category: "Technology",
-            date: "November 245, 2024",
+            date: "November 25, 2024",
             summary: "Anthropic introduces the Model Context Protocol, a new open standard for AI model interoperability, enabling developers to build more flexible and powerful applications.",
             image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%234361ee'/%3E%3Ctext x='400' y='225' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'%3EModel Context Protocol%3C/text%3E%3C/svg%3E",
             link: "https://www.anthropic.com/news/model-context-protocol"
