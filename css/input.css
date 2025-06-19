@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sf antialiased;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-white/70 dark:bg-apple-gray-900/70 backdrop-blur-xl backdrop-saturate-150 border border-white/20 dark:border-apple-gray-800/20;
+  }
+  
+  /* Liquid blob effect */
+  .liquid-blob {
+    @apply absolute bg-gradient-to-r from-blue-400 to-purple-600 opacity-70 mix-blend-multiply filter blur-xl animate-liquid;
+  }
+  
+  /* Apple-style button */
+  .btn-apple {
+    @apply px-6 py-3 bg-apple-gray-900 dark:bg-apple-gray-100 text-white dark:text-apple-gray-900 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+  
+  /* Smooth link transitions */
+  .link-smooth {
+    @apply relative transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400;
+  }
+  
+  .link-smooth::after {
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300;
+  }
+  
+  .link-smooth:hover::after {
+    @apply w-full;
+  }
+  
+  /* Shimmer effect */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .shimmer::before {
+    @apply content-[''] absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  }
+  
+  /* Liquid gradient background */
+  .liquid-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  /* Smooth fade transitions */
+  .fade-in {
+    @apply animate-fade-in;
+  }
+  
+  .slide-up {
+    @apply animate-slide-up;
+  }
+  
+  /* Modern scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-apple-gray-100 dark:bg-apple-gray-900;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-apple-gray-400 dark:bg-apple-gray-600 rounded-full transition-colors duration-300;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-apple-gray-500 dark:bg-apple-gray-500;
+  }
+  
+  /* Loading skeleton */
+  .skeleton {
+    @apply bg-apple-gray-200 dark:bg-apple-gray-800 rounded animate-pulse;
+  }
+}
+
+@layer utilities {
+  /* Safari-specific fixes */
+  .safari-fix {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  
+  /* Performance optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Prevent text selection */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}

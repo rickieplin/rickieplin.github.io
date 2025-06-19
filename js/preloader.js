@@ -1,169 +1,261 @@
 /**
- * Minecraft-style preloader functionality for Lin Pei's portfolio website
- * Controls the loading animation, block-based progress bar, and welcome message
- * Only shows on the first visit to the home page
+ * Optimized Minecraft-style preloader with performance improvements
+ * Features requestAnimationFrame for smooth animations and better error handling
  */
-document.addEventListener("DOMContentLoaded", function() {
-    // Get preloader elements
-    const preloader = document.querySelector(".preloader");
-    const progressBlocksContainer = document.querySelector(".progress-blocks-container");
-    const percentageText = document.querySelector(".loader-percentage");
-    const welcomeMessage = document.querySelector(".welcome-message");
+(function() {
+    'use strict';
     
-    // Check if this is the first visit
-    const hasVisitedBefore = localStorage.getItem("hasVisitedBefore");
-    
-    // If user has visited before, hide preloader immediately
-    if (hasVisitedBefore) {
-        if (preloader) {
-            preloader.style.display = "none";
-        }
-        return; // Exit the function early
-    }
-    
-    // Create blocks for the progress bar
-    const totalBlocks = 20;
-    const blocks = [];
-    
-    // Create the initial blocks
-    for (let i = 0; i < totalBlocks; i++) {
-        const block = document.createElement("div");
-        block.className = "progress-block";
-        progressBlocksContainer.appendChild(block);
-        blocks.push(block);
-    }
-    
-    // Play a "block place" sound effect
-    const playBlockSound = function() {
-        // Create a simple beep sound
-        const context = new (window.AudioContext || window.webkitAudioContext)();
-        const oscillator = context.createOscillator();
-        const gainNode = context.createGain();
-        
-        oscillator.type = "square";
-        oscillator.frequency.value = 150 + Math.random() * 100;
-        oscillator.connect(gainNode);
-        gainNode.connect(context.destination);
-        
-        gainNode.gain.value = 0.1;
-        oscillator.start();
-        setTimeout(function() {
-            oscillator.stop();
-        }, 100);
+    // Performance optimization: Cache DOM queries
+    const elements = {
+        preloader: null,
+        progressBlocksContainer: null,
+        percentageText: null,
+        welcomeMessage: null,
+        blocks: []
     };
     
-    // Set initial percentage
-    let loadingPercentage = 0;
-    let lastBlockIndex = -1;
+    // Configuration
+    const config = {
+        totalBlocks: 20,
+        loadingSpeed: 16, // ms per frame (60fps)
+        incrementRange: { min: 2, max: 5 },
+        soundEnabled: true,
+        maxLoadTime: 3000
+    };
     
-    // Simulate loading progress
-    const interval = setInterval(function() {
-        // Increment loading percentage
-        loadingPercentage += Math.floor(Math.random() * 3) + 1;
-        
-        // Ensure we don't exceed 100%
-        if (loadingPercentage > 100) {
-            loadingPercentage = 100;
-            clearInterval(interval);
-            
-            // Show welcome message when loading reaches 100%
-            if (welcomeMessage) {
-                welcomeMessage.classList.add("visible");
-                
-                // Play a special completion sound
-                try {
-                    const context = new (window.AudioContext || window.webkitAudioContext)();
-                    const oscillator = context.createOscillator();
-                    const gainNode = context.createGain();
-                    
-                    oscillator.type = "sine";
-                    oscillator.frequency.value = 440;
-                    oscillator.connect(gainNode);
-                    gainNode.connect(context.destination);
-                    
-                    gainNode.gain.value = 0.2;
-                    oscillator.start();
-                    
-                    // Play a little melody
-                    setTimeout(() => { oscillator.frequency.value = 523.25; }, 200);
-                    setTimeout(() => { oscillator.frequency.value = 659.25; }, 400);
-                    setTimeout(() => {
-                        oscillator.stop();
-                    }, 600);
-                } catch (e) {
-                    console.error("Could not play audio", e);
-                }
-            }
-            
-            // Hide preloader after a delay
-            setTimeout(function() {
-                if (preloader) {
-                    preloader.classList.add("hidden");
-                    
-                    // Set localStorage to indicate user has visited before
-                    localStorage.setItem("hasVisitedBefore", "true");
-                }
-            }, 1500);
-        }
-        
-        // Calculate which blocks should be active
-        const activeBlockIndex = Math.floor(loadingPercentage / 100 * totalBlocks);
-        
-        // Activate blocks if needed
-        if (activeBlockIndex > lastBlockIndex) {
-            for (let i = lastBlockIndex + 1; i <= activeBlockIndex; i++) {
-                if (i < blocks.length) {
-                    setTimeout(function() {
-                        blocks[i].classList.add("active");
-                        try {
-                            playBlockSound();
-                        } catch (e) {
-                            console.error("Could not play audio", e);
-                        }
-                    }, (i - lastBlockIndex - 1) * 100);
-                }
-            }
-            lastBlockIndex = activeBlockIndex;
-        }
-        
-        // Update percentage text
-        if (percentageText) {
-            percentageText.textContent = `${loadingPercentage}%`;
-        }
-    }, 200);
+    // Audio context (reused for performance)
+    let audioContext = null;
     
-    // Fallback to ensure preloader is hidden even if loading simulation fails
-    window.addEventListener("load", function() {
-        setTimeout(function() {
-            if (preloader && !preloader.classList.contains("hidden")) {
-                // Force complete loading
-                blocks.forEach(block => block.classList.add("active"));
-                
-                if (percentageText) {
-                    percentageText.textContent = "100%";
-                }
-                
-                if (welcomeMessage) {
-                    welcomeMessage.classList.add("visible");
-                }
-                
-                // Hide preloader
-                setTimeout(function() {
-                    preloader.classList.add("hidden");
-                    
-                    // Set localStorage to indicate user has visited before
-                    localStorage.setItem("hasVisitedBefore", "true");
-                }, 1000);
+    // Initialize audio context lazily
+    function getAudioContext() {
+        if (!audioContext && config.soundEnabled) {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            } catch (e) {
+                config.soundEnabled = false;
+                console.warn('Audio context not available');
             }
-        }, 3000); // Maximum wait time of 3 seconds
+        }
+        return audioContext;
+    }
+    
+    // Optimized block sound effect
+    function playBlockSound() {
+        if (!config.soundEnabled) return;
+        
+        const context = getAudioContext();
+        if (!context) return;
+        
+        try {
+            const oscillator = context.createOscillator();
+            const gainNode = context.createGain();
+            
+            oscillator.type = 'square';
+            oscillator.frequency.value = 150 + Math.random() * 100;
+            oscillator.connect(gainNode);
+            gainNode.connect(context.destination);
+            
+            gainNode.gain.setValueAtTime(0.1, context.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, context.currentTime + 0.1);
+            
+            oscillator.start();
+            oscillator.stop(context.currentTime + 0.1);
+        } catch (e) {
+            // Silently fail
+        }
+    }
+    
+    // Play completion melody
+    function playCompletionSound() {
+        if (!config.soundEnabled) return;
+        
+        const context = getAudioContext();
+        if (!context) return;
+        
+        try {
+            const notes = [440, 523.25, 659.25]; // A4, C5, E5
+            const duration = 0.2;
+            
+            notes.forEach((freq, index) => {
+                const oscillator = context.createOscillator();
+                const gainNode = context.createGain();
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.value = freq;
+                oscillator.connect(gainNode);
+                gainNode.connect(context.destination);
+                
+                const startTime = context.currentTime + (index * duration);
+                gainNode.gain.setValueAtTime(0, startTime);
+                gainNode.gain.linearRampToValueAtTime(0.2, startTime + 0.01);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+                
+                oscillator.start(startTime);
+                oscillator.stop(startTime + duration);
+            });
+        } catch (e) {
+            // Silently fail
+        }
+    }
+    
+    // Create progress blocks
+    function createBlocks() {
+        const fragment = document.createDocumentFragment();
+        
+        for (let i = 0; i < config.totalBlocks; i++) {
+            const block = document.createElement('div');
+            block.className = 'progress-block';
+            fragment.appendChild(block);
+            elements.blocks.push(block);
+        }
+        
+        elements.progressBlocksContainer.appendChild(fragment);
+    }
+    
+    // Animate block activation
+    function activateBlock(index) {
+        if (index < elements.blocks.length && !elements.blocks[index].classList.contains('active')) {
+            elements.blocks[index].classList.add('active');
+            playBlockSound();
+        }
+    }
+    
+    // Hide preloader with animation
+    function hidePreloader() {
+        elements.preloader.classList.add('hidden');
+        localStorage.setItem('hasVisitedBefore', 'true');
+        
+        // Clean up audio context
+        if (audioContext && audioContext.state !== 'closed') {
+            audioContext.close();
+        }
+    }
+    
+    // Main loading animation using requestAnimationFrame
+    function animateLoading() {
+        let loadingPercentage = 0;
+        let lastBlockIndex = -1;
+        let lastTime = performance.now();
+        let frameCount = 0;
+        
+        function animate(currentTime) {
+            const deltaTime = currentTime - lastTime;
+            
+            // Only update every few frames for performance
+            if (deltaTime >= config.loadingSpeed) {
+                frameCount++;
+                
+                // Increment loading percentage
+                const increment = config.incrementRange.min + 
+                    Math.random() * (config.incrementRange.max - config.incrementRange.min);
+                loadingPercentage = Math.min(100, loadingPercentage + increment);
+                
+                // Update percentage text
+                if (elements.percentageText) {
+                    elements.percentageText.textContent = `${Math.floor(loadingPercentage)}%`;
+                }
+                
+                // Calculate active blocks
+                const targetBlockIndex = Math.floor((loadingPercentage / 100) * config.totalBlocks);
+                
+                // Activate new blocks
+                for (let i = lastBlockIndex + 1; i <= targetBlockIndex && i < config.totalBlocks; i++) {
+                    setTimeout(() => activateBlock(i), (i - lastBlockIndex - 1) * 50);
+                }
+                lastBlockIndex = targetBlockIndex;
+                
+                lastTime = currentTime;
+            }
+            
+            // Continue animation or complete
+            if (loadingPercentage < 100) {
+                requestAnimationFrame(animate);
+            } else {
+                completeLoading();
+            }
+        }
+        
+        requestAnimationFrame(animate);
+    }
+    
+    // Complete loading sequence
+    function completeLoading() {
+        // Show welcome message
+        if (elements.welcomeMessage) {
+            elements.welcomeMessage.classList.add('visible');
+        }
+        
+        // Play completion sound
+        playCompletionSound();
+        
+        // Hide preloader after delay
+        setTimeout(hidePreloader, 1500);
+    }
+    
+    // Force complete loading (fallback)
+    function forceComplete() {
+        elements.blocks.forEach(block => block.classList.add('active'));
+        
+        if (elements.percentageText) {
+            elements.percentageText.textContent = '100%';
+        }
+        
+        if (elements.welcomeMessage) {
+            elements.welcomeMessage.classList.add('visible');
+        }
+        
+        setTimeout(hidePreloader, 1000);
+    }
+    
+    // Initialize preloader
+    function init() {
+        // Cache DOM elements
+        elements.preloader = document.querySelector('.preloader');
+        if (!elements.preloader) return;
+        
+        // Check if user has visited before
+        if (localStorage.getItem('hasVisitedBefore')) {
+            elements.preloader.style.display = 'none';
+            return;
+        }
+        
+        elements.progressBlocksContainer = document.querySelector('.progress-blocks-container');
+        elements.percentageText = document.querySelector('.loader-percentage');
+        elements.welcomeMessage = document.querySelector('.welcome-message');
+        
+        if (!elements.progressBlocksContainer) return;
+        
+        // Create blocks and start animation
+        createBlocks();
+        animateLoading();
+        
+        // Fallback timeout
+        setTimeout(() => {
+            if (elements.preloader && !elements.preloader.classList.contains('hidden')) {
+                forceComplete();
+            }
+        }, config.maxLoadTime);
+    }
+    
+    // Start when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Ensure preloader is hidden when everything is loaded
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            if (elements.preloader && !elements.preloader.classList.contains('hidden')) {
+                forceComplete();
+            }
+        }, 100);
     });
-});
-
-/**
- * Utility function to reset the preloader for testing purposes
- * Can be called from the browser console: resetPreloader()
- */
-function resetPreloader() {
-    localStorage.removeItem("hasVisitedBefore");
-    console.log("Preloader has been reset. Refresh the page to see the preloader again.");
-} 
+    
+    // Expose reset function globally
+    window.resetPreloader = function() {
+        localStorage.removeItem('hasVisitedBefore');
+        console.log('Preloader has been reset. Refresh the page to see the preloader again.');
+    };
+})();

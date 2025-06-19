@@ -1,220 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Pei (Rickie) Lin | Software Engineer</title>
-		<link rel="stylesheet" href="css/styles.css" />
-		<link rel="stylesheet" href="css/preloader.css" />
-		<link rel="stylesheet" href="css/floating.css" />
-		<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-		<script src="js/access-control.js"></script>
-	</head>
-	<body>
-		<!-- Preloader -->
-		<div class="preloader">
-			<div class="logo-container">
-				<div class="minecraft-logo">RL</div>
-			</div>
-			<div class="loader-text">
-				<span>Mining Portfolio</span>
-				<span class="loading-dots"></span>
-			</div>
-			<div class="loader-container">
-				<div class="progress-bar">
-					<div class="progress-blocks-container">
-						<!-- Blocks will be added dynamically via JS -->
-					</div>
-				</div>
-				<div class="loader-percentage">0%</div>
-			</div>
-			<div class="welcome-message">Crafted just for you!</div>
-		</div>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pei (Rickie) Lin | Software Engineer</title>
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/preloader-compiled.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/access-control.js"></script>
+</head>
+<body class="bg-apple-gray-50 dark:bg-apple-gray-950 text-apple-gray-900 dark:text-apple-gray-100 overflow-x-hidden">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="logo-container">
+            <div class="minecraft-logo">RL</div>
+        </div>
+        <div class="loader-text">
+            <span>Mining Portfolio</span>
+            <span class="loading-dots"></span>
+        </div>
+        <div class="loader-container">
+            <div class="progress-bar">
+                <div class="progress-blocks-container"></div>
+            </div>
+            <div class="loader-percentage">0%</div>
+        </div>
+        <div class="welcome-message">Crafted just for you!</div>
+    </div>
 
-		<div class="container">
-			<div class="left-column">
-				<!-- Navigation -->
-				<nav>
-					<div class="logo-mark">RL</div>
-					<ul class="nav-links">
-						<li><a href="index.html" class="active">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="consulting.html">News&Interests</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
+    <!-- Liquid Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="liquid-blob w-96 h-96 -top-48 -left-48"></div>
+        <div class="liquid-blob w-96 h-96 -bottom-48 -right-48" style="animation-delay: 4s;"></div>
+    </div>
 
-				<!-- Main Content -->
-				<div class="content">
-					<div class="home-header">
-						<h2 class="subtitle">FULL-STACK SOFTWARE ENGINEER</h2>
-						<h1 class="title">Pei (Rickie) Lin</h1>
-						
-						<div class="specialty-tags">
-							<span class="specialty-tag"><i class="fas fa-code"></i> Full-Stack Development</span>
-							<span class="specialty-tag"><i class="fas fa-brain"></i> Machine Learning</span>
-							<span class="specialty-tag"><i class="fas fa-robot"></i> AI Engineering</span>
-						</div>
-						
-						<p class="description">
-							Welcome to my digital playground! 🎢 I'm Pei (Rickie) Lin, a tech
-							explorer and Full-Stack Software Engineer. Whether I'm crafting code
-							or conjuring AI spells, I'm all about turning ideas into reality.
-							Join me on this journey as I blend creativity with technology to
-							build a smarter, more exciting world! 🌟
-						</p>
-					</div>
+    <!-- Main Container -->
+    <div class="relative min-h-screen flex">
+        <!-- Left Column - Navigation & Content -->
+        <div class="w-full lg:w-1/2 px-8 lg:px-16 py-12 relative z-10">
+            <!-- Navigation -->
+            <nav class="glass-card rounded-2xl p-6 mb-12 animate-slide-down">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="text-3xl font-bold text-gradient">RL</div>
+                    <button class="lg:hidden" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <ul class="nav-links space-y-4 hidden lg:block" id="navMenu">
+                    <li><a href="index.html" class="link-smooth font-medium text-lg block py-2">Home</a></li>
+                    <li><a href="about.html" class="link-smooth font-medium text-lg block py-2">About</a></li>
+                    <li><a href="consulting.html" class="link-smooth font-medium text-lg block py-2">News & Interests</a></li>
+                    <li><a href="contact.html" class="link-smooth font-medium text-lg block py-2">Contact</a></li>
+                </ul>
+            </nav>
 
-					<div class="stats-container">
-						<div class="stat-item">
-							<div class="stat-number" data-count="4">0</div>
-							<div class="stat-label">Years Experience</div>
-						</div>
-						<div class="stat-item">
-							<div class="stat-number" data-count="15">0</div>
-							<div class="stat-label">Projects Completed</div>
-						</div>
-					</div>
+            <!-- Main Content -->
+            <div class="space-y-8">
+                <!-- Header -->
+                <div class="glass-card rounded-2xl p-8 animate-slide-up">
+                    <h2 class="text-sm font-semibold text-apple-gray-600 dark:text-apple-gray-400 uppercase tracking-wider mb-2">
+                        Full-Stack Software Engineer
+                    </h2>
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-gradient">
+                        Pei (Rickie) Lin
+                    </h1>
+                    
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="glass-card px-4 py-2 rounded-full text-sm font-medium hover-lift">
+                            <i class="fas fa-code mr-2"></i>Full-Stack Development
+                        </span>
+                        <span class="glass-card px-4 py-2 rounded-full text-sm font-medium hover-lift">
+                            <i class="fas fa-brain mr-2"></i>Machine Learning
+                        </span>
+                        <span class="glass-card px-4 py-2 rounded-full text-sm font-medium hover-lift">
+                            <i class="fas fa-robot mr-2"></i>AI Engineering
+                        </span>
+                    </div>
+                    
+                    <p class="text-lg leading-relaxed text-apple-gray-700 dark:text-apple-gray-300">
+                        Welcome to my digital playground! 🎢 I'm Pei (Rickie) Lin, a tech
+                        explorer and Full-Stack Software Engineer. Whether I'm crafting code
+                        or conjuring AI spells, I'm all about turning ideas into reality.
+                        Join me on this journey as I blend creativity with technology to
+                        build a smarter, more exciting world! 🌟
+                    </p>
+                </div>
 
-					<div class="home-cta">
-						<a href="about.html" class="btn-primary">
-							<span>Learn More</span>
-							<i class="fas fa-arrow-right"></i>
-						</a>
-						<a href="contact.html" class="btn-secondary">
-							<span>Get in Touch</span>
-						</a>
-					</div>
-					
-					<div class="social-bar">
-						<a href="https://linkedin.com/in/pei-lin0203" target="_blank" class="social-icon" aria-label="LinkedIn">
-							<i class="fab fa-linkedin-in"></i>
-						</a>
-						<a href="https://github.com/rickieplin" target="_blank" class="social-icon" aria-label="GitHub">
-							<i class="fab fa-github"></i>
-						</a>
-						<a href="mailto:pei.lin@mail.utoronto.ca" class="social-icon" aria-label="Email">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</div>
-				</div>
-			</div>
+                <!-- Stats -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 text-center hover-lift animate-slide-up" style="animation-delay: 0.1s;">
+                        <div class="text-4xl font-bold text-gradient mb-2 stat-number" data-count="4">0</div>
+                        <div class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Years Experience</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 text-center hover-lift animate-slide-up" style="animation-delay: 0.2s;">
+                        <div class="text-4xl font-bold text-gradient mb-2 stat-number" data-count="15">0</div>
+                        <div class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Projects Completed</div>
+                    </div>
+                </div>
 
-			<div class="right-column">
-				<div class="illustration">
-					<div class="particles"></div>
-					<div class="hero-graphic">
-						<div class="floating-elements">
-							<div class="float-element"></div>
-							<div class="float-element"></div>
-							<div class="float-element"></div>
-							<div class="float-element"></div>
-							<div class="float-element"></div>
-						</div>
-					</div>
-				</div>
-				<div class="shape-decoration shape-1"></div>
-				<div class="shape-decoration shape-2"></div>
-				<div class="shape-decoration shape-3"></div>
-			</div>
-		</div>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.3s;">
+                    <a href="about.html" class="btn-apple flex items-center justify-center gap-2 shimmer">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="contact.html" class="glass-card px-6 py-3 rounded-full font-medium text-center hover-lift">
+                        Get in Touch
+                    </a>
+                </div>
 
-		<!-- Scripts -->
-		<script src="js/preloader.js"></script>
-		<script>
-			// Animate counting for stats
-			document.addEventListener("DOMContentLoaded", function() {
-				const statNumbers = document.querySelectorAll(".stat-number");
-				
-				// Intersection Observer to trigger animation when in view
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							animateCount(entry.target);
-							observer.unobserve(entry.target);
-						}
-					});
-				}, { threshold: 0.5 });
-				
-				statNumbers.forEach(stat => {
-					observer.observe(stat);
-				});
-				
-				function animateCount(element) {
-					const target = parseInt(element.getAttribute("data-count"));
-					const duration = 2000; // 2 seconds
-					const steps = 50;
-					const stepTime = duration / steps;
-					const stepValue = target / steps;
-					let current = 0;
-					let counter = 0;
-					
-					const timer = setInterval(() => {
-						counter++;
-						current = Math.ceil(counter * stepValue);
-						
-						if (current > target) current = target;
-						element.textContent = current;
-						
-						if (current >= target) {
-							clearInterval(timer);
-						}
-					}, stepTime);
-				}
+                <!-- Social Links -->
+                <div class="flex gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                    <a href="https://linkedin.com/in/pei-lin0203" target="_blank" 
+                       class="glass-card w-12 h-12 rounded-full flex items-center justify-center hover-lift group">
+                        <i class="fab fa-linkedin-in text-xl group-hover:text-blue-600 transition-colors"></i>
+                    </a>
+                    <a href="https://github.com/rickieplin" target="_blank" 
+                       class="glass-card w-12 h-12 rounded-full flex items-center justify-center hover-lift group">
+                        <i class="fab fa-github text-xl group-hover:text-purple-600 transition-colors"></i>
+                    </a>
+                    <a href="mailto:pei.lin@mail.utoronto.ca" 
+                       class="glass-card w-12 h-12 rounded-full flex items-center justify-center hover-lift group">
+                        <i class="fas fa-envelope text-xl group-hover:text-red-600 transition-colors"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-				// Floating elements and particles animation
-				// Create particles for the animation
-				const particlesContainer = document.querySelector(".particles");
-				if (particlesContainer) {
-					for (let i = 0; i < 30; i++) {
-						const particle = document.createElement("div");
-						particle.classList.add("particle");
-						
-						// Random size between 3px and 8px
-						const size = Math.floor(Math.random() * 6) + 3;
-						particle.style.width = `${size}px`;
-						particle.style.height = `${size}px`;
-						
-						// Random position
-						const posX = Math.floor(Math.random() * 100);
-						const posY = Math.floor(Math.random() * 100);
-						particle.style.left = `${posX}%`;
-						particle.style.bottom = `${posY}%`;
-						
-						// Random animation duration and delay
-						const duration = Math.floor(Math.random() * 5) + 5;
-						const delay = Math.random() * 5;
-						particle.style.animationDuration = `${duration}s`;
-						particle.style.animationDelay = `${delay}s`;
-						
-						particlesContainer.appendChild(particle);
-					}
-				}
-				
-				// Add tech icons to floating elements
-				const floatElements = document.querySelectorAll(".float-element");
-				
-				// Tech icons
-				const techIcons = [
-					// Java
-					'<svg viewBox="0 0 24 24" width="60%" height="60%" fill="white"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.93.828-.93-1.151-.809-7.455 1.594-3.196 2.28 11.573 1.84 21.11-.828 15.53-1.376M9.292 13.21s-5.282 1.255-1.871 1.711c1.441.194 4.309.15 6.984-.19 2.184-.283 4.371-.888 4.371-.888s-.769.33-1.324.71c-5.35 1.408-15.669.75-12.699-.672 2.522-1.203 4.539-.671 4.539-.671M17.127 17.422c5.443-2.83 2.926-5.549 1.17-5.183-.433.091-.621.17-.621.17s.16-.25.463-.36c3.464-1.218 6.13 3.605-1.121 5.519 0-.002.084-.076.109-.146M14.401 0s3.02 3.02-2.864 7.667c-4.724 3.73-1.077 5.859-.002 8.287-2.757-2.489-4.778-4.681-3.417-6.728 2-2.99 7.553-4.443 6.283-9.226M9.734 23.924c5.229.335 13.272-.185 13.46-2.657 0 0-.366.938-4.329 1.683-4.47.835-9.986.739-13.266.203 0 0 .67.557 4.135.771"></path></svg>',
-					// Docker
-					'<svg viewBox="0 0 24 24" width="60%" height="60%" fill="white"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.88.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 0 0 3.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>',
-					// GitHub
-					'<svg viewBox="0 0 24 24" width="60%" height="60%" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>',
-					// ChatGPT
-					'<svg viewBox="0 0 24 24" width="60%" height="60%" fill="white"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.073zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.5094-2.6067-1.4997Z"/></svg>',
-					// Python
-					'<svg viewBox="0 0 24 24" width="60%" height="60%" fill="white"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>'
-				];
-				
-				floatElements.forEach((el, index) => {
-					if (index < techIcons.length) {
-						el.innerHTML = techIcons[index];
-					}
-				});
-			});
-		</script>
-	</body>
+        <!-- Right Column - Visual Elements -->
+        <div class="hidden lg:block lg:w-1/2 relative">
+            <div class="sticky top-0 h-screen flex items-center justify-center p-16">
+                <div class="relative w-full h-full max-w-2xl max-h-2xl">
+                    <!-- Animated Tech Stack Icons -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="relative w-full h-full">
+                            <!-- Tech Icons with Liquid Animation -->
+                            <div class="tech-icon absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float">
+                                <i class="fab fa-python text-3xl"></i>
+                            </div>
+                            <div class="tech-icon absolute top-1/4 right-0 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 1s;">
+                                <i class="fab fa-react text-3xl text-blue-500"></i>
+                            </div>
+                            <div class="tech-icon absolute top-1/2 right-1/4 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 2s;">
+                                <i class="fab fa-docker text-3xl text-blue-600"></i>
+                            </div>
+                            <div class="tech-icon absolute bottom-1/4 right-0 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 3s;">
+                                <i class="fab fa-github text-3xl"></i>
+                            </div>
+                            <div class="tech-icon absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 4s;">
+                                <i class="fab fa-js text-3xl text-yellow-500"></i>
+                            </div>
+                            <div class="tech-icon absolute bottom-1/4 left-0 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 5s;">
+                                <i class="fab fa-node text-3xl text-green-600"></i>
+                            </div>
+                            <div class="tech-icon absolute top-1/2 left-1/4 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 6s;">
+                                <i class="fab fa-java text-3xl text-red-600"></i>
+                            </div>
+                            <div class="tech-icon absolute top-1/4 left-0 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 7s;">
+                                <i class="fas fa-database text-3xl text-purple-600"></i>
+                            </div>
+                            
+                            <!-- Center Liquid Shape -->
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 liquid-gradient rounded-full animate-morph opacity-80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/preloader.js"></script>
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Dark mode toggle
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Animate counting for stats
+        document.addEventListener("DOMContentLoaded", function() {
+            const statNumbers = document.querySelectorAll(".stat-number");
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCount(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statNumbers.forEach(stat => {
+                observer.observe(stat);
+            });
+            
+            function animateCount(element) {
+                const target = parseInt(element.getAttribute("data-count"));
+                const duration = 2000;
+                const steps = 50;
+                const stepTime = duration / steps;
+                const stepValue = target / steps;
+                let current = 0;
+                let counter = 0;
+                
+                const timer = setInterval(() => {
+                    counter++;
+                    current = Math.ceil(counter * stepValue);
+                    
+                    if (current > target) current = target;
+                    element.textContent = current;
+                    
+                    if (current >= target) {
+                        clearInterval(timer);
+                    }
+                }, stepTime);
+            }
+        });
+    </script>
+</body>
 </html>
