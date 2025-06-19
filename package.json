@@ -3,12 +3,7 @@
   "version": "1.0.0",
   "description": "Personal portfolio website for Pei (Rickie) Lin",
   "scripts": {
-    "dev": "npm run css:watch",
-    "build": "npm run css:build",
-    "css:watch": "tailwindcss -i ./css/input.css -o ./css/output.css --watch",
-    "css:build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.4.0"
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static HTML/CSS site'"
   }
 }

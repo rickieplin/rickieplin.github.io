@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pei (Rickie) Lin | Software Engineer</title>
-    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/preloader-compiled.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/access-control.js"></script>
 </head>
-<body class="bg-apple-gray-50 dark:bg-apple-gray-950 text-apple-gray-900 dark:text-apple-gray-100 overflow-x-hidden">
+<body>
     <!-- Preloader -->
     <div class="preloader">
         <div class="logo-container">
@@ -29,144 +29,86 @@
         <div class="welcome-message">Crafted just for you!</div>
     </div>
 
-    <!-- Liquid Background Elements -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none">
-        <div class="liquid-blob w-96 h-96 -top-48 -left-48"></div>
-        <div class="liquid-blob w-96 h-96 -bottom-48 -right-48" style="animation-delay: 4s;"></div>
-    </div>
-
-    <!-- Main Container -->
-    <div class="relative min-h-screen flex">
-        <!-- Left Column - Navigation & Content -->
-        <div class="w-full lg:w-1/2 px-8 lg:px-16 py-12 relative z-10">
+    <div class="container">
+        <div class="left-column">
             <!-- Navigation -->
-            <nav class="glass-card rounded-2xl p-6 mb-12 animate-slide-down">
-                <div class="flex items-center justify-between mb-8">
-                    <div class="text-3xl font-bold text-gradient">RL</div>
-                    <button class="lg:hidden" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-                <ul class="nav-links space-y-4 hidden lg:block" id="navMenu">
-                    <li><a href="index.html" class="link-smooth font-medium text-lg block py-2">Home</a></li>
-                    <li><a href="about.html" class="link-smooth font-medium text-lg block py-2">About</a></li>
-                    <li><a href="consulting.html" class="link-smooth font-medium text-lg block py-2">News & Interests</a></li>
-                    <li><a href="contact.html" class="link-smooth font-medium text-lg block py-2">Contact</a></li>
+            <nav>
+                <div class="logo-mark">RL</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="consulting.html">News&Interests</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
             <!-- Main Content -->
-            <div class="space-y-8">
-                <!-- Header -->
-                <div class="glass-card rounded-2xl p-8 animate-slide-up">
-                    <h2 class="text-sm font-semibold text-apple-gray-600 dark:text-apple-gray-400 uppercase tracking-wider mb-2">
-                        Full-Stack Software Engineer
-                    </h2>
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-gradient">
-                        Pei (Rickie) Lin
-                    </h1>
-                    
-                    <div class="flex flex-wrap gap-3 mb-6">
-                        <span class="glass-card px-4 py-2 rounded-full text-sm font-medium hover-lift">
-                            <i class="fas fa-code mr-2"></i>Full-Stack Development
-                        </span>
-                        <span class="glass-card px-4 py-2 rounded-full text-sm font-medium hover-lift">
-                            <i class="fas fa-brain mr-2"></i>Machine Learning
-                        </span>
-                        <span class="glass-card px-4 py-2 rounded-full text-sm font-medium hover-lift">
-                            <i class="fas fa-robot mr-2"></i>AI Engineering
-                        </span>
-                    </div>
-                    
-                    <p class="text-lg leading-relaxed text-apple-gray-700 dark:text-apple-gray-300">
-                        Welcome to my digital playground! 🎢 I'm Pei (Rickie) Lin, a tech
-                        explorer and Full-Stack Software Engineer. Whether I'm crafting code
-                        or conjuring AI spells, I'm all about turning ideas into reality.
-                        Join me on this journey as I blend creativity with technology to
-                        build a smarter, more exciting world! 🌟
-                    </p>
+            <div class="content">
+                <div class="page-header">
+                    <h2 class="subtitle">FULL-STACK SOFTWARE ENGINEER</h2>
+                    <h1 class="title">Pei (Rickie) Lin</h1>
                 </div>
 
-                <!-- Stats -->
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="glass-card rounded-2xl p-6 text-center hover-lift animate-slide-up" style="animation-delay: 0.1s;">
-                        <div class="text-4xl font-bold text-gradient mb-2 stat-number" data-count="4">0</div>
-                        <div class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Years Experience</div>
+                <div class="specialty-tags">
+                    <span class="specialty-tag">
+                        <i class="fas fa-code"></i>Full-Stack Development
+                    </span>
+                    <span class="specialty-tag">
+                        <i class="fas fa-brain"></i>Machine Learning
+                    </span>
+                    <span class="specialty-tag">
+                        <i class="fas fa-robot"></i>AI Engineering
+                    </span>
+                </div>
+
+                <div class="description">
+                    Welcome to my digital playground! 🎢 I'm Pei (Rickie) Lin, a tech
+                    explorer and Full-Stack Software Engineer. Whether I'm crafting code
+                    or conjuring AI spells, I'm all about turning ideas into reality.
+                    Join me on this journey as I blend creativity with technology to
+                    build a smarter, more exciting world! 🌟
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number stat-number-animated" data-count="4">0</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    <div class="glass-card rounded-2xl p-6 text-center hover-lift animate-slide-up" style="animation-delay: 0.2s;">
-                        <div class="text-4xl font-bold text-gradient mb-2 stat-number" data-count="15">0</div>
-                        <div class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Projects Completed</div>
+                    <div class="stat-item">
+                        <div class="stat-number stat-number-animated" data-count="15">0</div>
+                        <div class="stat-label">Projects Completed</div>
                     </div>
                 </div>
 
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.3s;">
-                    <a href="about.html" class="btn-apple flex items-center justify-center gap-2 shimmer">
+                <div class="home-cta">
+                    <a href="about.html" class="btn-primary">
                         <span>Learn More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="contact.html" class="glass-card px-6 py-3 rounded-full font-medium text-center hover-lift">
+                    <a href="contact.html" class="btn-secondary">
                         Get in Touch
                     </a>
                 </div>
 
-                <!-- Social Links -->
-                <div class="flex gap-4 animate-slide-up" style="animation-delay: 0.4s;">
-                    <a href="https://linkedin.com/in/pei-lin0203" target="_blank" 
-                       class="glass-card w-12 h-12 rounded-full flex items-center justify-center hover-lift group">
-                        <i class="fab fa-linkedin-in text-xl group-hover:text-blue-600 transition-colors"></i>
+                <div class="social-bar">
+                    <a href="https://linkedin.com/in/pei-lin0203" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/rickieplin" target="_blank" 
-                       class="glass-card w-12 h-12 rounded-full flex items-center justify-center hover-lift group">
-                        <i class="fab fa-github text-xl group-hover:text-purple-600 transition-colors"></i>
+                    <a href="https://github.com/rickieplin" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
                     </a>
-                    <a href="mailto:pei.lin@mail.utoronto.ca" 
-                       class="glass-card w-12 h-12 rounded-full flex items-center justify-center hover-lift group">
-                        <i class="fas fa-envelope text-xl group-hover:text-red-600 transition-colors"></i>
+                    <a href="mailto:pei.lin@mail.utoronto.ca" class="social-icon">
+                        <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Right Column - Visual Elements -->
-        <div class="hidden lg:block lg:w-1/2 relative">
-            <div class="sticky top-0 h-screen flex items-center justify-center p-16">
-                <div class="relative w-full h-full max-w-2xl max-h-2xl">
-                    <!-- Animated Tech Stack Icons -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative w-full h-full">
-                            <!-- Tech Icons with Liquid Animation -->
-                            <div class="tech-icon absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float">
-                                <i class="fab fa-python text-3xl"></i>
-                            </div>
-                            <div class="tech-icon absolute top-1/4 right-0 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 1s;">
-                                <i class="fab fa-react text-3xl text-blue-500"></i>
-                            </div>
-                            <div class="tech-icon absolute top-1/2 right-1/4 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 2s;">
-                                <i class="fab fa-docker text-3xl text-blue-600"></i>
-                            </div>
-                            <div class="tech-icon absolute bottom-1/4 right-0 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 3s;">
-                                <i class="fab fa-github text-3xl"></i>
-                            </div>
-                            <div class="tech-icon absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 4s;">
-                                <i class="fab fa-js text-3xl text-yellow-500"></i>
-                            </div>
-                            <div class="tech-icon absolute bottom-1/4 left-0 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 5s;">
-                                <i class="fab fa-node text-3xl text-green-600"></i>
-                            </div>
-                            <div class="tech-icon absolute top-1/2 left-1/4 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 6s;">
-                                <i class="fab fa-java text-3xl text-red-600"></i>
-                            </div>
-                            <div class="tech-icon absolute top-1/4 left-0 w-20 h-20 glass-card rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 7s;">
-                                <i class="fas fa-database text-3xl text-purple-600"></i>
-                            </div>
-                            
-                            <!-- Center Liquid Shape -->
-                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 liquid-gradient rounded-full animate-morph opacity-80"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="right-column">
+            <div class="illustration"></div>
+            <div class="shape-decoration shape-1"></div>
+            <div class="shape-decoration shape-2"></div>
+            <div class="shape-decoration shape-3"></div>
         </div>
     </div>
 
@@ -174,20 +116,9 @@
     <script src="js/utils.js"></script>
     <script src="js/preloader.js"></script>
     <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Dark mode toggle
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-
         // Animate counting for stats
         document.addEventListener("DOMContentLoaded", function() {
-            const statNumbers = document.querySelectorAll(".stat-number");
+            const statNumbers = document.querySelectorAll(".stat-number-animated");
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {

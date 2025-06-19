@@ -1,94 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Interests | Pei (Rickie) Lin</title>
-    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/access-control.js"></script>
 </head>
-<body class="bg-apple-gray-50 dark:bg-apple-gray-950 text-apple-gray-900 dark:text-apple-gray-100 overflow-x-hidden">
-    <!-- Liquid Background Elements -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none">
-        <div class="liquid-blob w-96 h-96 -top-48 -left-48"></div>
-        <div class="liquid-blob w-96 h-96 -bottom-48 -right-48" style="animation-delay: 4s;"></div>
-    </div>
-
-    <!-- Main Container -->
-    <div class="relative min-h-screen flex">
-        <!-- Left Column - Navigation & Content -->
-        <div class="w-full lg:w-3/4 px-8 lg:px-16 py-12 relative z-10">
+<body>
+    <div class="container">
+        <div class="left-column">
             <!-- Navigation -->
-            <nav class="glass-card rounded-2xl p-6 mb-12 animate-slide-down">
-                <div class="flex items-center justify-between mb-8">
-                    <div class="text-3xl font-bold text-gradient">RL</div>
-                    <button class="lg:hidden" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-                <ul class="nav-links space-y-4 hidden lg:block" id="navMenu">
-                    <li><a href="index.html" class="link-smooth font-medium text-lg block py-2">Home</a></li>
-                    <li><a href="about.html" class="link-smooth font-medium text-lg block py-2">About</a></li>
-                    <li><a href="consulting.html" class="link-smooth font-medium text-lg block py-2 text-blue-600 dark:text-blue-400">News & Interests</a></li>
-                    <li><a href="contact.html" class="link-smooth font-medium text-lg block py-2">Contact</a></li>
+            <nav>
+                <div class="logo-mark">RL</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="consulting.html" class="active">News&Interests</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
             <!-- Main Content -->
-            <div class="space-y-8">
-                <!-- Header -->
-                <div class="glass-card rounded-2xl p-8 animate-slide-up">
-                    <h2 class="text-sm font-semibold text-apple-gray-600 dark:text-apple-gray-400 uppercase tracking-wider mb-2">
-                        Latest Updates
-                    </h2>
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-4 text-gradient">
-                        News & Interests
-                    </h1>
+            <div class="content">
+                <div class="page-header">
+                    <h2 class="subtitle">LATEST UPDATES</h2>
+                    <h1 class="title">News & Interests</h1>
                 </div>
 
                 <!-- News Section -->
-                <div class="animate-slide-up" style="animation-delay: 0.1s;">
-                    <div class="mb-6">
-                        <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
-                            <i class="fas fa-newspaper text-blue-600"></i>
+                <div class="news-section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-newspaper"></i>
                             Tech & Industry Updates
                         </h2>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400">
+                        <p class="section-description">
                             Stay informed with the latest developments in technology, AI, and software engineering from around the world.
                         </p>
                     </div>
 
-                    <div class="news-container grid gap-6">
+                    <div class="news-container">
                         <!-- News posts will be populated by JavaScript -->
                     </div>
                 </div>
 
                 <!-- Personal Interests Section -->
-                <div class="animate-slide-up" style="animation-delay: 0.2s;">
-                    <div class="mb-6">
-                        <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
-                            <i class="fas fa-heart text-red-600"></i>
+                <div class="interests-section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-heart"></i>
                             My Personal Interests
                         </h2>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400">
+                        <p class="section-description">
                             When I'm not coding or working on tech projects, here are some of the activities I enjoy in my free time.
                         </p>
                     </div>
 
-                    <div class="interests-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="interests-container">
                         <!-- Interest items will be populated by JavaScript -->
                     </div>
                 </div>
 
                 <!-- CTA Section -->
-                <div class="glass-card rounded-2xl p-8 text-center animate-slide-up" style="animation-delay: 0.3s;">
-                    <h3 class="text-2xl font-bold mb-4">Want to discuss tech trends or share similar interests?</h3>
-                    <p class="text-apple-gray-600 dark:text-apple-gray-400 mb-6 max-w-2xl mx-auto">
+                <div class="cta-section">
+                    <h3 class="cta-title">Want to discuss tech trends or share similar interests?</h3>
+                    <p class="cta-description">
                         Feel free to reach out! I'm always open to connecting with like-minded individuals and discussing the latest in technology and beyond.
                     </p>
-                    <a href="contact.html" class="btn-apple inline-flex items-center gap-2 shimmer">
+                    <a href="contact.html" class="btn-primary">
                         <span>Get in Touch</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -96,70 +78,16 @@
             </div>
         </div>
 
-        <!-- Right Column - Visual Elements -->
-        <div class="hidden lg:block lg:w-1/4 relative">
-            <div class="sticky top-0 h-screen flex items-center justify-center p-8">
-                <div class="relative w-full h-full max-w-md">
-                    <!-- Animated News Icons -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative w-full h-full">
-                            <!-- Floating news-related icons -->
-                            <div class="absolute top-10 left-1/2 -translate-x-1/2 w-16 h-16 glass-card rounded-xl flex items-center justify-center animate-float">
-                                <i class="fas fa-rss text-2xl text-orange-500"></i>
-                            </div>
-                            <div class="absolute top-1/3 right-0 w-16 h-16 glass-card rounded-xl flex items-center justify-center animate-float" style="animation-delay: 1.5s;">
-                                <i class="fas fa-globe text-2xl text-blue-500"></i>
-                            </div>
-                            <div class="absolute bottom-1/3 left-0 w-16 h-16 glass-card rounded-xl flex items-center justify-center animate-float" style="animation-delay: 3s;">
-                                <i class="fas fa-lightbulb text-2xl text-yellow-500"></i>
-                            </div>
-                            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 glass-card rounded-xl flex items-center justify-center animate-float" style="animation-delay: 4.5s;">
-                                <i class="fas fa-rocket text-2xl text-purple-500"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="right-column">
+            <div class="consulting-illustration"></div>
+            <div class="shape-decoration shape-1"></div>
+            <div class="shape-decoration shape-2"></div>
+            <div class="shape-decoration shape-3"></div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="js/utils.js"></script>
     <script src="js/news-feed.js"></script>
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Style overrides for news items
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait for news items to be loaded
-            setTimeout(() => {
-                // Style news items
-                const newsItems = document.querySelectorAll('.news-item');
-                newsItems.forEach((item, index) => {
-                    item.className = 'glass-card rounded-2xl p-6 hover-lift transition-all duration-300';
-                    item.style.animationDelay = `${index * 0.1}s`;
-                    item.classList.add('animate-slide-up');
-                });
-
-                // Style interest items
-                const interestItems = document.querySelectorAll('.interest-item');
-                interestItems.forEach((item, index) => {
-                    item.className = 'glass-card rounded-2xl p-6 text-center hover-lift transition-all duration-300';
-                    item.style.animationDelay = `${index * 0.1}s`;
-                    item.classList.add('animate-scale-in');
-                    
-                    // Update icon styling
-                    const icon = item.querySelector('i');
-                    if (icon) {
-                        icon.className = icon.className + ' text-4xl mb-4';
-                    }
-                });
-            }, 100);
-        });
-    </script>
 </body>
 </html>

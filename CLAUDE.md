@@ -8,11 +8,9 @@ This is a personal portfolio website for Pei (Rickie) Lin, hosted on GitHub Page
 
 ## Development Commands
 
-Now using TailwindCSS for styling:
-- **Install dependencies**: `npm install`
-- **Development**: `npm run dev` - watches for CSS changes
-- **Build CSS**: `npm run build` - creates minified CSS
-- **Run locally**: Open any HTML file directly in a browser or use `python -m http.server`
+Now using pure CSS for styling:
+- **Run locally**: Open any HTML file directly in a browser or use `python -m http.server 8000`
+- **Development**: `npm run dev` - starts local development server
 - **Deploy**: Push changes to the main branch - GitHub Pages automatically deploys
 - **Test preloader**: Run `resetPreloader()` in browser console to test the Minecraft-style preloader again
 
@@ -33,15 +31,16 @@ Now using TailwindCSS for styling:
 - **project.js**: Project filtering with optional Isotope library support
 
 ### Styling Approach
-- Monochromatic design (black, white, light gray)
+- Modern Apple-inspired design with custom CSS
+- Glass morphism effects and liquid animations
 - Responsive two-column layout
-- Separate CSS files for each page
-- Floating animation effects for tech icons
+- Unified CSS in styles.css with component-based classes
+- Dark mode support and smooth animations
 
 ## Important Notes
 
-1. **TailwindCSS Setup**: Run `npm install` first, then use `npm run dev` for development
-2. **Styling Approach**: Uses TailwindCSS with custom Apple-inspired design tokens
+1. **Pure CSS Styling**: No build tools required - uses custom CSS with modern features
+2. **Styling Approach**: Modern Apple-inspired design with glass morphism and liquid animations
 3. **Performance**: Includes optimized preloader with requestAnimationFrame, lazy loading, and intersection observers
 4. **Error Handling**: Robust error handling in utils.js with fallbacks for older browsers
 5. **Contact Form**: Currently shows alert only - needs backend implementation for actual functionality
